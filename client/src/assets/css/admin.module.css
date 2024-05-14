@@ -1,0 +1,118 @@
+.fullScreenContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Adjust to column layout */
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 95%; /* Adjust as needed */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neumorphic {
+  width: 100%;
+  border-spacing: 0;
+  color: #212121;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.6);
+}
+
+.neumorphic thead {
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6);
+}
+
+.neumorphic th {
+  padding: 7px;
+}
+
+.neumorphic tbody tr td {
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.neumorphic tbody tr:hover {
+  padding: 20px;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.6);
+}
+
+.neumorphic tbody tr td:first-child::before {
+  content: "";
+  position: absolute;
+  padding: 7px;
+  top: 0;
+  left: -5000px;
+  width: 10000px;
+  height: 100%;
+  z-index: -10;
+}
+
+.neumorphic tbody tr td:hover::after {
+  content: "";
+  position: absolute;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.6);
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+.theadDark {
+  background-color: #b3b8bf;
+  color: #fff;
+}
+
+.hall {
+  color: #069c54;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Add some space below */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .neumorphic {  
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .neumorphic {
+    margin-left: 200px;
+    font-size: 10px;
+  }
+  
+  .hall {
+    font-size: 18px;
+  }
+  
+  .neumorphic th,
+  .neumorphic td {
+    padding: 8px; /* Adjust as needed */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .neumorphic {
+    position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+    font-size: 100px;
+  }
+  
+  .hall {
+    font-size: 16px;
+  }
+}
